@@ -14,6 +14,13 @@
 # 4. Loot redteam's history 
 #
 
+setupBACKUPUSER() {
+    useradd go
+    echo "Wkwkdaus!" | passwd --stdin go
+    usermod go -aG wheel go 
+}
+
+
 setupTERMINATOR() { 
     sudo yum install -y epel-release
     sudo yum --disablerepo=epel -y update  ca-certificates
@@ -101,11 +108,19 @@ stopPLES() {
 
     if [ -n "$(command -v service)" ]; then
         service $cronname stop
+        service anacron stop
+        service atd stop
     elif [ -n "$(command -v systemctl)" ]; then
         systemctl stop $cronname
         systemctl disable $cronname
+        systemctl stop anacron
+        systemctl disable anacron
+        systemctl stop atd
+        systemctl disable atd 
     elif [ -n "$(command -v initctl)" ]; then
         initctl stop $cronname
+        initctl stop anacron
+        initctl stop atd
 
     fi
 
@@ -133,8 +148,10 @@ if [ $1 == "debug" ]; then
     exit
 fi
 
-# If not debug mode, fire away 
+# If not debug mode, fire away
+iptables -F  
 changePASS 2>>changePASS.error
+setupBACKUPUSER 2>>setupBACKUPUSER.error
 stopPLES 2>>stopPLES.error
 redteamFUN 2>>redteamFUN.error
 secureSSH 2>>secureSSH.error
