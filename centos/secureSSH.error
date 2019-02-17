@@ -1,0 +1,40 @@
+http://mirror.es.its.nyu.edu/centos/7.6.1810/os/x86_64/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.es.its.nyu.edu/centos/7.6.1810/os/x86_64/repodata/repomd.xml: (28, 'Connection timed out after 30002 milliseconds')
+Trying other mirror.
+http://mirrors.centos.webair.com/centos/7.6.1810/os/x86_64/repodata/repomd.xml: [Errno 14] curl#56 - "Callback aborted"
+Trying other mirror.
+http://mirror.cc.columbia.edu/pub/linux/centos/7.6.1810/os/x86_64/repodata/repomd.xml: [Errno 14] curl#56 - "Callback aborted"
+Trying other mirror.
+http://ftp.ussg.iu.edu/linux/centos/7.6.1810/os/x86_64/repodata/repomd.xml: [Errno -1] Error importing repomd.xml for base: Damaged repomd.xml file
+Trying other mirror.
+http://mirror.siena.edu/centos/7.6.1810/os/x86_64/repodata/repomd.xml: [Errno 14] curl#56 - "Callback aborted"
+Trying other mirror.
+Existing lock /var/run/yum.pid: another copy is running as pid 15634.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  57 M RSS (448 MB VSZ)
+    Started: Sun Feb 17 18:03:43 2019 - 01:04 ago
+    State  : Sleeping, pid: 15634
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  57 M RSS (448 MB VSZ)
+    Started: Sun Feb 17 18:03:43 2019 - 01:06 ago
+    State  : Sleeping, pid: 15634
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  57 M RSS (448 MB VSZ)
+    Started: Sun Feb 17 18:03:43 2019 - 01:08 ago
+    State  : Sleeping, pid: 15634
+http://mirror.clarkson.edu/centos/7.6.1810/os/x86_64/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.clarkson.edu/centos/7.6.1810/os/x86_64/repodata/repomd.xml: (28, 'Connection timed out after 30002 milliseconds')
+Trying other mirror.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  80 M RSS (487 MB VSZ)
+    Started: Sun Feb 17 18:03:43 2019 - 01:10 ago
+    State  : Uninterruptible, pid: 15634
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  91 M RSS (487 MB VSZ)
+    Started: Sun Feb 17 18:03:43 2019 - 01:12 ago
+    State  : Sleeping, pid: 15634
+No Match for argument: openssh-clients
+No Match for argument: openssh-server

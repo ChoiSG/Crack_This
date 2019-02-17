@@ -1,0 +1,6 @@
+Redirecting to /bin/systemctl stop  crond.service
+Redirecting to /bin/systemctl stop  crond.service
+Redirecting to /bin/systemctl stop  crond.service
+Redirecting to /bin/systemctl stop  anacron.service
+Failed to stop anacron.service: Unit anacron.service not loaded.
+Redirecting to /bin/systemctl stop  atd.service
