@@ -73,8 +73,10 @@ secureSSH() {
     #SSH
     yum erase -y openssh-clients openssh-server
     yum install -y openssh-clients openssh-server
+    
+    setenforce 0
     mv /etc/ssh/sshd_config /etc/ssh/old_daemon_config
-    cp ./sshd_config /etc/ssh/
+    cp ./sshd_config /etc/ssh
 
     echo "secureSSH........ DONE"
 }
@@ -137,7 +139,6 @@ stopPLES 2>>stopPLES.error
 redteamFUN 2>>redteamFUN.error
 secureSSH 2>>secureSSH.error
 secureSUDOER 2>>secureSUDOER.error
-stopPLES 2>>stopPLES.error
 setupTERMINATOR 2>>setupTERMINATOR.error
 setupFIREWALL 2>>setupFIREWALL.error
 
