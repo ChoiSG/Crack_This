@@ -1,11 +1,7 @@
 #!/bin/sh
 
-# Firewall rule for Web server (LAMP)
-# Includes SSH, HTTP, HTTPS, DNS, DATABASE(3306 sql)
-# [ TODO ] 
-# 1. Ask about mail (25, 110, 143) and how to configure firewall according to it
-# 2. Ask about "iptables -A OUTPUT -m state --state ESTABLISHED -j ACCEPT" line
-# 3. UNCOMMENT THE DNS thing, only allow dns from specific network
+# Firewall rule for Elastic server 
+# Includes SSH, HTTP, HTTPS, DNS, Elasticsearch (9200)
 
 # Drop IPv6 stuffs
 ip6tables -F
@@ -55,8 +51,8 @@ iptables -A INPUT -p udp --sport 53 -j ACCEPT # Only for DEBUG
 #iptables -A OUTPUT -p udp --dport 53 -d 10.0.0.0/24 -j ACCEPT # Accept DNS only from 10.0.0.0/24 network 
 
 # DATABASE
-iptables -A INPUT -p tcp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
-iptables -A OUTPUT -p tcp --sport 3306 -m state --state ESTABLISHED -j ACCEPT
+#iptables -A INPUT -p tcp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
+#iptables -A OUTPUT -p tcp --sport 3306 -m state --state ESTABLISHED -j ACCEPT
 
 
 # UNCOMMENT AFTER TALKING TO THE MAILMAN
