@@ -5,7 +5,7 @@
 #   2. chattr log stuffs 
 #   3. Discuss with crack members and add more stuff 
 #
-
+# Stuart's vpn is a nono
 
 # Script - TODO 
 # 1. Change credentials (add sudo user?) 
