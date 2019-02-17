@@ -1,0 +1,5 @@
+tar: Removing leading `/' from member names
+tar: /root/.profile: Cannot stat: No such file or directory
+tar: /root/.lesshst: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+tar: Removing leading `/' from member names
