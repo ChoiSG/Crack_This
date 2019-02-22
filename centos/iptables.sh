@@ -2,6 +2,9 @@
 
 # Firewall rule for Elastic server 
 # Includes SSH, HTTP, HTTPS, DNS, Elasticsearch (9200)
+# Think about this 
+# sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+# As network traffic generally needs to be two-way—incoming and outgoing—to work properly, it is typical to create a firewall rule that allows established and related incoming traffic, so that the server will allow return traffic to outgoing connections initiated by the server itself. This command will allow that:
 
 # Drop IPv6 stuffs
 ip6tables -F
