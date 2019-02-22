@@ -6,6 +6,8 @@
 # sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 # As network traffic generally needs to be two-way—incoming and outgoing—to work properly, it is typical to create a firewall rule that allows established and related incoming traffic, so that the server will allow return traffic to outgoing connections initiated by the server itself. This command will allow that:
 
+# Think about -i tun0   // VPN related firewall?? 
+
 # Drop IPv6 stuffs
 ip6tables -F
 ip6tables -P INPUT DROP 
