@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Reference
+# https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands
+
 # Firewall rule for Elastic server 
 # Includes SSH, HTTP, HTTPS, DNS, Elasticsearch (9200)
 # Think about this 
