@@ -30,7 +30,7 @@ setupTERMINATOR() {
 
 setupFIREWALL() {
     chmod +x iptables_client.sh
-    bash ./iptables_client.sh
+    bash iptables_client.sh
 }
 
 changePASS() {
