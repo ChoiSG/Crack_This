@@ -51,14 +51,6 @@ New-NetFirewallRule -DisplayName "Allow InBound Port 3269" -Direction Inbound -L
 New-NetFirewallRule -DisplayName "Allow Outbound Port 3269" -Direction Outbound -RemotePort 3269 -Protocol TCP -Action Allow
 
 
-New-NetFirewallRule -DisplayName "Allow InBound TCP Port 445" -Direction Inbound -LocalPort 445 -Protocol TCP -Action Allow
-New-NetFirewallRule -DisplayName "Allow Outbound TCP Port 445" -Direction Outbound -RemotePort 445 -Protocol TCP -Action Allow
-
-
-New-NetFirewallRule -DisplayName "Allow InBound UDP Port 445" -Direction Inbound -LocalPort 445 -Protocol UDP -Action Allow
-New-NetFirewallRule -DisplayName "Allow Outbound UDP Port 445" -Direction Outbound -RemotePort 445 -Protocol UDP -Action Allow
-
-
 New-NetFirewallRule -DisplayName "Allow InBound UDP Port 138" -Direction Inbound -LocalPort 138 -Protocol UDP -Action Allow
 New-NetFirewallRule -DisplayName "Allow Outbound UDP Port 138" -Direction Outbound -RemotePort 138 -Protocol UDP -Action Allow
 
