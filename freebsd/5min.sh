@@ -64,7 +64,8 @@ redteamFUN() {
 secureSSH() {
     mv /etc/ssh/sshd_config /etc/ssh/old_daemon_config
     cp ./sshd_config /etc/ssh
-	/etc/rc.d/sshd restart
+    echo 'sshd_enable="YES"' >> /etc/rc.conf
+    /etc/rc.d/sshd restart
 
     echo "secureSSH........ DONE"
 }
