@@ -8,4 +8,4 @@ set expandtab
 
 set number
 syntax on
-set mouse=
+set mouse=a
