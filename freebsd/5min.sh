@@ -119,7 +119,7 @@ secureSUDOER 2>>secureSUDOER.error
 
 curl https://raw.githubusercontent.com/ChoiSG/Crack_This/master/freebsd/pf.conf -o /etc/pf.conf
 kldload pf
-pf -e
-pf -f /etc/pf.conf
+pfctl -e
+pfctl -f /etc/pf.conf
 echo 'pf_enable="YES"' >> /etc/rc.conf
 echo 'pf_rules="/etc/pf.conf"' >> /etc/rc.conf
