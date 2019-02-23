@@ -124,3 +124,7 @@ pfctl -e
 pfctl -f /etc/pf.conf
 echo 'pf_enable="YES"' >> /etc/rc.conf
 echo 'pf_rules="/etc/pf.conf"' >> /etc/rc.conf
+echo "Waiting for 5s to clear the firewalls..."
+sleep 5
+echo "Clearing firewalls...  RUN pfctl -e IF THE RULES WORK"
+pfctl -d
