@@ -7,8 +7,8 @@ Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
 Set-NetFirewallProfile -All -DefaultInboundAction Block -DefaultOutboundAction Block
 
 
-
-
+New-NetFirewallRule -DisplayName "Allow InBound Port 53" -Direction Inbound -LocalPort 53 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "Allow Outbound Port 53" -Direction Outbound -RemotePort 53 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "Allow InBound Port 53" -Direction Inbound -LocalPort 53 -Protocol UDP -Action Allow
 New-NetFirewallRule -DisplayName "Allow Outbound Port 53" -Direction Outbound -RemotePort 53 -Protocol UDP -Action Allow
 
@@ -35,8 +35,8 @@ New-NetFirewallRule -DisplayName "Allow Outbound UDP Port 464" -Direction Outbou
 
 
 
-
-
+New-NetFirewallRule -DisplayName "Allow InBound TCP Port 88" -Direction Inbound -LocalPort 88 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "Allow Outbound TCP Port 88" -Direction Outbound -RemotePort 88 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "Allow InBound UDP Port 88" -Direction Inbound -LocalPort 88 -Protocol UDP -Action Allow
 New-NetFirewallRule -DisplayName "Allow Outbound UDP Port 88" -Direction Outbound -RemotePort 88 -Protocol UDP -Action Allow
 
@@ -55,5 +55,5 @@ New-NetFirewallRule -DisplayName "Allow InBound UDP Port 138" -Direction Inbound
 New-NetFirewallRule -DisplayName "Allow Outbound UDP Port 138" -Direction Outbound -RemotePort 138 -Protocol UDP -Action Allow
 
 
-New-NetFirewallRule -DisplayName "Allow InBound UDP Port 138" -Direction Inbound -LocalPort 139 -Protocol TCP -Action Allow
-New-NetFirewallRule -DisplayName "Allow Outbound UDP Port 138" -Direction Outbound -RemotePort 139 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "Allow InBound UDP Port 139" -Direction Inbound -LocalPort 139 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "Allow Outbound UDP Port 139" -Direction Outbound -RemotePort 139 -Protocol TCP -Action Allow
