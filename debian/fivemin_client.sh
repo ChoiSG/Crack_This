@@ -81,7 +81,7 @@ backupFUN() {
 
 secureSSH() {
     #SSH
-    apt-get --purge remove openssh-server
+    apt-get --purge remove -y openssh-server
     apt-get install -y openssh-server
 
     mv /etc/ssh/sshd_config /etc/ssh/old_daemon_config
