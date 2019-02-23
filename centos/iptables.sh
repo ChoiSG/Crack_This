@@ -65,14 +65,10 @@ iptables -A INPUT -p udp --sport 53 -j ACCEPT # Only for DEBUG
 #iptables -A INPUT -p tcp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
 #iptables -A OUTPUT -p tcp --sport 3306 -m state --state ESTABLISHED -j ACCEPT
 
-
-# UNCOMMENT AFTER TALKING TO THE MAILMAN
-# SMTP, IMAP, POP3 
-#iptables -A INPUT -p tcp -m multiport --dports 25,110,143 -m state --state NEW,ESTABLISHED -j ACCEPT
-#iptables -A OUTPUT -p tcp -m multiport --sports 25,110,143 -m state --state ESTABLISHED -j ACCEPT
-
+iptables -A INPUT -p tcp --dport 9000 -j ACCEPT
 iptables -A INPUT -p tcp --dport 9200:9300 -j ACCEPT
-
+iptables -A OUTPUT -p tcp --dport 9000 -m state --state ESTABLISHED,REL -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 9200:9300 -j ACCEPT
 
 ######## END OF FIREWALL ############
 
@@ -90,4 +86,3 @@ iptables -A OUTPUT -j DROP
 #iptables -F 
 #iptables  -X
 #iptables -X 
-
