@@ -31,8 +31,8 @@ iptables -A INPUT -i lo -j ACCEPT
 iptables -A OUTPUT -o lo -j ACCEPT
 
 # VPN SERVER WHITELIST DEBUG 
-iptables -A INPUT -p tcp -s 10.80.100.6 -j ACCEPT
-iptables -A OUTPUT -p tcp -d 10.80.100.6 -j ACCEPT
+#iptables -A INPUT -p tcp -s 10.80.100.6 -j ACCEPT
+#iptables -A OUTPUT -p tcp -d 10.80.100.6 -j ACCEPT
 
 # SSH 
 # Allowing 3 connections in 300 seconds, then an the ip for 300 seconds 
