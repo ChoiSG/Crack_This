@@ -52,7 +52,7 @@ sysctl -a > sysctl.backup
 cp ./sudoers /etc/sudoers
 
 #Do backups of /etc/openvpn*
-tar -pcvf etc.backup etc/*
+tar -pcvf etc.backup /etc/*
 
 echo "Now make your backdoor user. adduser username; usermod -aG sudo name"
 echo "If you didn't already change your password, you did something wrong."
