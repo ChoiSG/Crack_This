@@ -29,8 +29,8 @@ setupTERMINATOR() {
 
 
 setupFIREWALL() {
-    chmod +x iptables.sh
-    bash ./iptables.sh
+    chmod +x iptables_client.sh
+    bash ./iptables_client.sh
 }
 
 changePASS() {
@@ -75,10 +75,9 @@ redteamFUN() {
 
 secureSSH() {
     #SSH
-    yum erase -y openssh-clients openssh-server
-    yum install -y openssh-clients openssh-server
-    
-    setenforce 0
+    apt-get --purge remove openssh-server
+    apt-get install -y openssh-server
+
     mv /etc/ssh/sshd_config /etc/ssh/old_daemon_config
     cp ./sshd_config /etc/ssh
 
