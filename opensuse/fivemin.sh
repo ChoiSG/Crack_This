@@ -22,7 +22,7 @@ setupBACKUPUSER() {
 
 
 setupTERMINATOR() { 
-    apt-get install -y terminator
+    zypper install terminator
     echo "setupTERMINATOR........ DONE" 
 
 }
