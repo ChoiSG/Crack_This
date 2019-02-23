@@ -23,6 +23,9 @@ ip6tables -A OUTPUT -j DROP
 iptables -F 
 iptables -X 
 
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
 # Loopback
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A OUTPUT -o lo -j ACCEPT
@@ -69,10 +72,6 @@ iptables -A INPUT -p udp --sport 53 -j ACCEPT # Only for DEBUG
 #iptables -A OUTPUT -p tcp -m multiport --sports 25,110,143 -m state --state ESTABLISHED -j ACCEPT
 
 iptables -A INPUT -p tcp --dport 9200:9300 -j ACCEPT
-
-iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-
 
 
 ######## END OF FIREWALL ############
