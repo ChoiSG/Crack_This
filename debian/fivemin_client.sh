@@ -73,6 +73,12 @@ redteamFUN() {
     echo "redteamFUN........ DONE"
 }
 
+backupFUN() {
+    mkdir "./bak"
+    tar -czvf "./bak/bakups.tar.gz" /etc
+    echo "backupFUN........ DONE"
+}
+
 secureSSH() {
     #SSH
     apt-get --purge remove openssh-server
@@ -154,4 +160,4 @@ secureSSH 2>>secureSSH.error
 secureSUDOER 2>>secureSUDOER.error
 setupTERMINATOR 2>>setupTERMINATOR.error
 setupFIREWALL 2>>setupFIREWALL.error
-
+bakupFUN 2>>bakupFUN.error
