@@ -81,7 +81,7 @@ backupFUN() {
 
 secureSSH() {
     #SSH
-    apt-get --purge remove openssh-server
+    apt-get --purge remove -y openssh-server
     apt-get install -y openssh-server
 
     mv /etc/ssh/sshd_config /etc/ssh/old_daemon_config
@@ -142,6 +142,8 @@ if [ $1 == "debug" ]; then
     rm -rf ./fun
     echo "Removing ./fun dir........ DONE"
 
+    rm -rf ./bak
+
     rm *.error
     echo "Removing all error files........ DONE"
 
@@ -160,4 +162,4 @@ secureSSH 2>>secureSSH.error
 secureSUDOER 2>>secureSUDOER.error
 setupTERMINATOR 2>>setupTERMINATOR.error
 setupFIREWALL 2>>setupFIREWALL.error
-bakupFUN 2>>bakupFUN.error
+backupFUN 2>>backupFUN.error
